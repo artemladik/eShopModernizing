@@ -15,9 +15,13 @@ nuget restore eShopModernizedNTier/eShopModernizedNTier.sln
 msbuild eShopModernizedNTier/src/eShopWCFService/eShopWCFService.csproj /nologo /p:PublishProfile=FolderProfile.pubxml /p:DeployOnBuild=true /p:docker_publish_root=../../../deploy/wcf/
 
 echo -e "Copying Dockerfiles to deploy folder"
-cp -f eShopModernizedNTier/src/eShopWCFService/Dockerfile deploy/wcf
-cp -f eShopModernizedMVCSolution/src/eShopModernizedMVC/Dockerfile deploy/mvc
-cp -f eShopModernizedWebFormsSolution/src/eShopModernizedWebForms/Dockerfile deploy/webforms
+mkdir -p ./deploy/wcf/
+mkdir -p ./deploy/mvc/
+mkdir -p ./deploy/webforms
+
+cp -f eShopModernizedNTier/src/eShopWCFService/Dockerfile deploy/wcf/Dockerfile
+cp -f eShopModernizedMVCSolution/src/eShopModernizedMVC/Dockerfile deploy/mvc/Dockerfile
+cp -f eShopModernizedWebFormsSolution/src/eShopModernizedWebForms/Dockerfile deploy/webforms/Dockerfile
 
 echo -e "\033[93m Building docker images...\033[0m"
 #docker-compose -f docker-compose.yml -f docker-compose.override.yml build
