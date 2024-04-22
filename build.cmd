@@ -1,5 +1,7 @@
 @echo [93m Creating the 'deploy' folder tree[0m
 
+@rm "./deploy" -r -force
+
 @echo [93m Building MVC project...[0m
 "./nuget.exe" restore eShopModernizedMVCSolution\eShopModernizedMVC.sln
 "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\msbuild.exe" eShopModernizedMVCSolution\src\eShopModernizedMVC\eShopModernizedMVC.csproj /nologo /p:PublishProfile=FolderProfile.pubxml /p:DeployOnBuild=true /p:docker_publish_root=..\..\..\deploy\mvc\
