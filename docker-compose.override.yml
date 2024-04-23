@@ -31,11 +31,12 @@ services:
     ports:
       - "5114:80"
 
-  eshopwcfservice:
+  eshop.modernized.wcf:
     environment:
       - CatalogDBContext=Server=sql.data;Database=eShopDatabase;User Id=sa;Password=Pass@word
     ports:   
      - "5113:80"       
+     
   sql.data:
     environment:
       - SA_PASSWORD=Pass@word
