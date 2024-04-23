@@ -21,4 +21,4 @@
 
 @echo [93m Building docker images... [0m
 
-REM docker-compose -f docker-compose.yml -f docker-compose.override.yml build
+docker-compose -f docker-compose.yml -f docker-compose.override.yml build
