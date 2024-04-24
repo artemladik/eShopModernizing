@@ -5,4 +5,4 @@ services:
     image: eshop/modernizedwebforms
 
   sql.data:
-    image: microsoft/mssql-server-windows-developer
+    image: willh/mssql-server-windows-developer:20H2

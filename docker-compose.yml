@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   eshop.modernized.wcf:
-    image: eshop/wcfservice:${TAG:-latest}
+    image: eshop/modernized-wcfservice:${TAG:-latest}
     build:
       context: ./deploy/wcf
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
       - sql.data
 
   eshop.modernized.webforms:
-    image: eshop/modernizedwebforms:${TAG:-latest}
+    image: eshop/modernized-webforms:${TAG:-latest}
     build:
       context: ./deploy/webforms
       dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
       - sql.data      
 
   eshop.modernized.mvc:
-    image: eshop/modernizedmvc:${TAG:-latest}
+    image: eshop/modernized-mvc:${TAG:-latest}
     build:
       context: ./deploy/mvc
       dockerfile: Dockerfile
